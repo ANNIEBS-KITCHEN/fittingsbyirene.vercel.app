@@ -1,1 +1,298 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fittings by Irene | Luxury Bridal & Evening Gowns</title>
+  <meta name="description" content="Luxury bespoke bridal and evening gowns in Benin City. Handcrafted by Fittings by Irene. Book your fitting today.">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --gold: #C9A227;
+      --dark: #1a1a1a;
+      --light: #FAF7F2;
+      --white: #ffffff;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { 
+      font-family: 'Poppins', sans-serif; 
+      background: var(--light); 
+      color: var(--dark); 
+      line-height: 1.7;
+      padding-bottom: 120px;
+    }
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+    }
+
+    header { 
+      background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1595777457583-95e059d581b8?q=80&w=2070') center/cover;
+      color: white; 
+      padding: 100px 20px; 
+      text-align: center;
+    }
+    .logo { width: 120px; margin-bottom: 20px; }
+    header h1 { font-size: 48px; letter-spacing: 2px; margin-bottom: 10px; }
+    header p { font-size: 18px; font-weight: 300; }
+
+    section { padding: 80px 20px; max-width: 1100px; margin: auto; text-align: center; }
+    h2 { color: var(--gold); font-size: 36px; margin-bottom: 30px; }
+
+    .gallery-grid {
+      display: grid; 
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+      gap: 25px; 
+      margin-top: 30px;
+    }
+    .gallery-item {
+      background: var(--white); 
+      border-radius: 8px; 
+      overflow: hidden; 
+      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease;
+    }
+    .gallery-item:hover { transform: translateY(-5px); }
+    .gallery-item img { width: 100%; height: 450px; object-fit: cover; }
+    .gallery-item p { padding: 15px; font-style: italic; text-align: center; font-size: 14px; }
+
+    .profile-img { width: 200px; height: 200px; object-fit: contain; margin-bottom: 20px; background: white; padding: 20px; border-radius: 12px; border: 3px solid var(--gold); }
+
+    .btn {
+      background: var(--gold);
+      color: white;
+      padding: 16px 40px;
+      border-radius: 4px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 500;
+      font-size: 15px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin: 15px 10px;
+      transition: all 0.3s ease;
+      border: 2px solid var(--gold);
+    }
+    .btn:hover { background: transparent; color: var(--gold); }
+    .btn.whatsapp { background: #25D366; border-color: #25D366; }
+    .btn.whatsapp:hover { background: transparent; color: #25D366; }
+    .btn svg { width: 20px; height: 20px; fill: currentColor; }
+
+    .card { 
+      background: var(--white); 
+      padding: 40px; 
+      margin: 20px auto; 
+      border-radius: 8px; 
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05); 
+      max-width: 700px; 
+      text-align: left;
+    }
+    
+    .stars { display: flex; gap: 4px; margin-bottom: 15px; }
+    .star { width: 18px; height: 18px; fill: var(--gold); }
+
+    .faq-item {
+      background: var(--white); 
+      padding: 25px 30px; 
+      margin-bottom: 20px;
+      border-radius: 8px; 
+      box-shadow: 0 5px 20px rgba(0,0,0,0.04); 
+      text-align: left;
+    }
+    .faq-item h3 { color: var(--gold); margin-bottom: 10px; font-size: 20px; }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      text-align: left;
+      margin-top: 30px;
+    }
+    .info-item h3 { color: var(--gold); margin-bottom: 10px; font-size: 20px; }
+    .info-item a { color: var(--gold); text-decoration: none; }
+    .info-item a:hover { text-decoration: underline; }
+    iframe { border-radius: 8px; width: 100%; height: 350px; border: 0; margin-top: 30px; }
+
+    .floating-social {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      z-index: 999;
+    }
+    .float-btn {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+    .float-btn:hover { transform: translateY(-5px); }
+    .float-btn svg { width: 26px; height: 26px; }
+    .whatsapp-btn { background: #25D366; }
+    .tiktok-btn { background: #000; }
+
+    @media (max-width: 768px) {
+      header h1 { font-size: 36px; }
+      h2 { font-size: 28px; }
+      .gallery-item img { height: 350px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="logo.png" alt="Fittings by Irene Logo" class="logo">
+    <h1>Fittings by Irene</h1>
+    <p>Luxury Bridal & Evening Wear Atelier</p>
+  </header>
+
+  <section>
+    <h2>Crafted For Your Moment</h2>
+    <p style="max-width: 700px; margin: 0 auto 30px;">We create timeless, bespoke gowns that make you feel like royalty. From intimate fittings to grand bridal reveals, every detail is designed with elegance and precision.</p>
+    
+    <a href="https://wa.me/2348070662178?text=Hi%20Fittings%20by%20Irene!%20I%20would%20like%20to%20book%20an%20appointment." target="_blank" class="btn whatsapp">
+      <svg viewBox="0 0 32 32"><path d="M19.11 17.14c-.28-.14-1.65-.8-1.9-.9-.25-.1-.43-.14-.61.14-.18.28-.7.9-.86 1.08-.16.18-.32.2-.6.07-.28-.14-1.18-.44-2.25-1.4-.83-.74-1.39-1.65-1.55-1.93-.16-.28-.02-.43.12-.57.12-.12.28-.32.42-.48.14-.16.19-.27.28-.45.09-.18.05-.34-.03-.48-.08-.14-.61-1.47-.84-2.01-.22-.53-.45-.46-.61-.47-.16-.01-.34-.01-.52-.01-.18 0-.47.07-.71.34-.24.27-.94.92-.94 2.25s.96 2.61 1.1 2.79c.13.18 1.9 2.9 4.6 4.07.64.28 1.14.44 1.53.56.64.2 1.22.17 1.68.1.51-.15 1.65-.67 1.88-1.32.23-.65.23-1.2.16-1.32-.07-.12-.25-.19-.53-.33zM16 2C8.27 2 2 8.27 2 16c0 2.47.66 4.87 1.91 6.98L2 30l7.18-1.89C11.04 29.19 13.46 30 16 30c7.73 0 14-6.27 14-14S23.73 2 16 2z"/></svg>
+      Book Appointment - Available 7 Days
+    </a>
+  </section>
+
+  <section>
+    <h2>Signature Creations by Fittings by Irene</h2>
+    <p style="max-width: 700px; margin: 0 auto 40px; font-size: 16px;">
+      <b>Every gown you see here was handcrafted in our atelier by Fittings by Irene.</b> 
+      These are real clients, real fittings, and real luxury designs made exclusively by our brand.
+    </p>
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img src="customer-1.jpg" alt="Regal traditional bridal gown made by Fittings by Irene">
+        <p><b>By Fittings by Irene:</b> A regal red traditional bridal ensemble, hand-beaded with coral details and layered coral beads, crafted to honor heritage with elegance and grace.</p>
+      </div>
+      <div class="gallery-item">
+        <img src="customer-2.jpg" alt="Grand red ball gown traditional bridal made by Fittings by Irene">
+        <p><b>By Fittings by Irene:</b> A grand red ball gown bridal look with dramatic tiered train and intricate coral beadwork, designed to make every bride feel like a queen on her traditional day.</p>
+      </div>
+      <div class="gallery-item">
+        <img src="customer-3.jpg" alt="Wine halter evening gown made by Fittings by Irene">
+        <p><b>By Fittings by Irene:</b> A chic wine halter evening gown with gold beaded waistline and flowing silhouette, tailored for timeless sophistication and confidence.</p>
+      </div>
+      <div class="gallery-item">
+        <img src="customer-4.jpg" alt="Wine one-shoulder evening gown made by Fittings by Irene">
+        <p><b>By Fittings by Irene:</b> An elegant wine one-shoulder evening gown with gold accent belt and flowing drape, designed to highlight grace and poise for your special occasion.</p>
+      </div>
+    </div>
+    <p style="margin-top: 30px; font-style: italic; color: #666;">Your dream gown can be next. Book your bespoke fitting today.</p>
+  </section>
+
+  <section>
+    <h2>Meet The Atelier</h2>
+    <img src="logo.png" alt="Fittings by Irene Logo" class="profile-img">
+    <p style="max-width: 700px; margin: auto;">At Fittings by Irene, we believe every woman deserves a gown that tells her story. Based in Benin City, we specialize in luxury bespoke bridal and evening wear, handcrafted with precision and love.</p>
+  </section>
+
+  <section>
+    <h2>Follow Our Journey</h2>
+    <a href="https://tiktok.com/@fittingsbyirene1" target="_blank" class="btn">
+      <svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+      @fittingsbyirene1
+    </a>
+  </section>
+
+  <section>
+    <h2>Client Testimonials</h2>
+    <div class="card">
+      <div class="stars">
+        <svg class="star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+        <svg class="star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+        <svg class="star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+        <svg class="star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+        <svg class="star" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+      </div>
+      <p style="font-style: italic; font-size: 18px;">“Fittings by Irene made me feel like royalty on my wedding day. The attention to detail was unmatched.”</p>
+      <p><b>- Ada B., Lagos</b></p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Frequently Asked Questions</h2>
+    <div style="max-width: 800px; margin: 0 auto;">
+      <div class="faq-item">
+        <h3>1. How far in advance should I book my fitting?</h3>
+        <p>We recommend booking 3-4 months before your event for bridal gowns, and 2-3 weeks for evening wear. Sunday bookings are available via WhatsApp.</p>
+      </div>
+      <div class="faq-item">
+        <h3>2. Do you provide fabrics or do I buy them?</h3>
+        <p>We can do both! We source premium fabrics for you, or you can bring your own. During your consultation we’ll guide you on the best fabric for your design.</p>
+      </div>
+      <div class="faq-item">
+        <h3>3. How many fittings are included?</h3>
+        <p>All custom gowns include 2-3 fittings to ensure a perfect fit. Additional fittings are available on request.</p>
+      </div>
+      <div class="faq-item">
+        <h3>4. Do you offer rush orders?</h3>
+        <p>Yes! Need it faster? Ask about our 1-week rush service for evening wear. Rush fees apply and depend on availability. Message us on WhatsApp to check.</p>
+      </div>
+      <div class="faq-item">
+        <h3>5. Do you deliver outside Benin City?</h3>
+        <p>Yes! We ship nationwide. We also do virtual consultations for clients outside Edo State. Delivery fees apply.</p>
+      </div>
+      <div class="faq-item">
+        <h3>6. Do you offer payment plans?</h3>
+        <p>Yes. We require a 50% deposit to begin work, with the balance due at final fitting. Message us on WhatsApp to discuss options.</p>
+      </div>
+      <div style="text-align: center; margin-top: 30px;">
+        <p><b>Still have questions?</b></p>
+        <a href="https://wa.me/2348070662178?text=Hi%20Fittings%20by%20Irene!%20I%20have%20a%20question%20about%20bookings." target="_blank" class="btn whatsapp">
+          <svg viewBox="0 0 32 32"><path d="M19.11 17.14c-.28-.14-1.65-.8-1.9-.9-.25-.1-.43-.14-.61.14-.18.28-.7.9-.86 1.08-.16.18-.32.2-.6.07-.28-.14-1.18-.44-2.25-1.4-.83-.74-1.39-1.65-1.55-1.93-.16-.28-.02-.43.12-.57.12-.12.28-.32.42-.48.14-.16.19-.27.28-.45.09-.18.05-.34-.03-.48-.08-.14-.61-1.47-.84-2.01-.22-.53-.45-.46-.61-.47-.16-.01-.34-.01-.52-.01-.18 0-.47.07-.71.34-.24.27-.94.92-.94 2.25s.96 2.61 1.1 2.79c.13.18 1.9 2.9 4.6 4.07.64.28 1.14.44 1.53.56.64.2 1.22.17 1.68.1.51-.15 1.65-.67 1.88-1.32.23-.65.23-1.2.16-1.32-.07-.12-.25-.19-.53-.33zM16 2C8.27 2 2 8.27 2 16c0 2.47.66 4.87 1.91 6.98L2 30l7.18-1.89C11.04 29.19 13.46 30 16 30c7.73 0 14-6.27 14-14S23.73 2 16 2z"/></svg>
+          Ask on WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Visit Our Atelier</h2>
+    <div class="info-grid">
+      <div class="info-item">
+        <h3>Location</h3>
+        <p>Fittings by Irene<br>
+        153, Uwasota Road, off Ugbowo Lagos Road,<br>
+        Benin City, Edo State, Nigeria</p>
+      </div>
+      <div class="info-item">
+        <h3>Contact</h3>
+        <p>Phone: <a href="tel:+2348070662178">+234 807 066 2178</a><br>
+        Email: <a href="mailto:fittingsbyirene@gmail.com">fittingsbyirene@gmail.com</a></p>
+      </div>
+      <div class="info-item">
+        <h3>Hours</h3>
+        <p><b>Studio:</b> Mon - Sat, 8:00 AM - 6:00 PM<br>
+        <b>Sunday:</b> Closed for Walk-ins</p>
+        <p><b>Bookings:</b> Available 7 Days, 8:00 AM - 9:00 PM via WhatsApp</p>
+      </div>
+    </div>
+    
+    <!-- UPDATED GOOGLE MAP -->
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.123456!2d5.600000!3d6.400000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s153%20Uwasota%20Rd%2C%20Benin%20City%2C%20Nigeria!5e0!3m2!1sen!2sng!4v1720000000000" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </section>
+
+  <div class="floating-social">
+    <a href="https://tiktok.com/@fittingsbyirene1" target="_blank" class="float-btn tiktok-btn">
+      <svg viewBox="0 0 24 24" fill="white"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+    </a>
+    <a href="https://wa.me/2348070662178" target="_blank" class="float-btn whatsapp-btn">
+      <svg viewBox="0 0 32 32" fill="white"><path d="M19.11 17.14c-.28-.14-1.65-.8-1.9-.9-.25-.1-.43-.14-.61.14-.18.28-.7.9-.86 1.08-.16.18-.32.2-.6.07-.28-.14-1.18-.44-2.25-1.4-.83-.74-1.39-1.65-1.55-1.93-.16-.28-.02-.43.12-.57.12-.12.28-.32.42-.48.14-.16.19-.27.28-.45.09-.18.05-.34-.03-.48-.08-.14-.61-1.47-.84-2.01-.22-.53-.45-.46-.61-.47-.16-.01-.34-.01-.52-.01-.18 0-.47.07-.71.34-.24.27-.94.92-.94 2.25s.96 2.61 1.1 2.79c.13.18 1.9 2.9 4.6 4.07.64.28 1.14.44 1.53.56.64.2 1.22.17 1.68.1.51-.15 1.65-.67 1.88-1.32.23-.65.23-1.2.16-1.32-.07-.12-.25-.19-.53-.33zM16 2C8.27 2 2 8.27 2 16c0 2.47.66 4.87 1.91 6.98L2 30l7.18-1.89C11.04 29.19 13.46 30 16 30c7.73 0 14-6.27 14-14S23.73 2 16 2z"/></svg>
+    </a>
+  </div>
+
+</body>
+</html>
